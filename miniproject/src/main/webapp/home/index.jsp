@@ -1,6 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>  
+    <%@taglib prefix="cr" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
+<<style>
+#mdlist {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.mditem {
+  flex: 1;
+  max-width: 23%;
+  text-align: left;
+}
+
+.mdimage img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.mdtitle {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.mddescription {
+  font-size: 12px;
+  margin-top: 10px;
+}
+</style>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -31,10 +63,27 @@
   </section>
   <!--금주 분양 매물 정보 끝-->
   <!--추천 분양 정보-->
-  <section>
-      <%@include file="./mdchoice.jsp" %>
-  </section>
-  <!--추천 분양 정보 끝-->
+<section>
+  <div class="recommend">
+      <p>추천분양정보<br><em>실시간 추천 분양정보를 한곳에!</em></p>
+      <div class="md_estates">
+        <ul id="mdlist">
+          <cr:forEach var="md" items="${mdall}">
+            <li class="mditem">
+              <div class="mdimage">
+              <a href=S{md.mdlink_adr} target="_blank"></a>
+                <img src="./md_room/${md.mdimage}" alt="${md.mdtitle}">
+              </a>
+              </div>
+              <span class="mdtitle">${md.mdtitle}</span>
+              <div class="mddescription">${md.mdtitle_texts}</div>
+            </li>
+          </cr:forEach>
+        </ul>
+      </div>
+  </div>
+</section>
+ <!--추천 분양 정보 끝-->
  </main>
  <!-- 카피라이터 -->
  <footer>

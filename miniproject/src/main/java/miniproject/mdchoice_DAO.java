@@ -4,15 +4,20 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-//DAO(Mybatis), DTO(setter, getter), VO(getter)
-//DAO : 데이터를 Access를 하는 역할
+@Repository("mdchoice_DAO")
+public class mdchoice_DAO {
+	//전체 데이터 가져오기
+	
+	@Resource(name="template")
+	public SqlSessionTemplate st;
+	
+	public List<mdchoice_DTO> mdchoice(){
+	      List<mdchoice_DTO> mdall = this.st.selectList("home_mapper.mdchoice_all");
+	      
+	      return mdall;
+	   }
 
-public class mdchoice_DAO {//implements :오버라이드 사용
-
-     }	
-
-
+}

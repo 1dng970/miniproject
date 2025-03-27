@@ -7,7 +7,7 @@
 	destroy-method="close" : 자동으로 문법이 완료되었을 경우 Database를 종료
 	  -->
 <bean id="dbinfo" class="org.apache.commons.dbcp.BasicDataSource">
-<property name="driverClassName" value="jdbc:mysql://localhost:3306/apt"/>
+<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 <property name="url" value="jdbc:mysql://localhost:3306/apt"/>
 <property name="username" value="homeselect"/>
 <property name="password" value="a123456"/>
@@ -23,7 +23,6 @@
 <property name="mapperLocations">
   <array>
     <value>classpath:/META-INF/mapper.xml</value>
-    <value>classpath:/META-INF/member_mapper.xml</value>   
   </array>
 </property>
 </bean>

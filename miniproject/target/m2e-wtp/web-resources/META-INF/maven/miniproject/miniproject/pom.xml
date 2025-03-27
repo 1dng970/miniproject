@@ -16,6 +16,19 @@
 </build>
 <!--  프로젝트에 필요한 각종 라이브러리 설치 목록  -->
 <dependencies>
+ <!-- Spring, Spring-boot Database 관련 id 의존성 주입하기 위해서 @injection -->
+<dependency>
+    <groupId>javax.inject</groupId>
+    <artifactId>javax.inject</artifactId>
+    <version>1</version>
+</dependency>
+    
+  <!--skf4j (log 출력 라이브러리) : JDK 및 라이브러리 호출 대한 정보 -->
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>2.0.17</version>
+</dependency>
 <!--  Spring, Spring-boot Database 관련 id 의존성 주입하기 위해서 @injection  -->
 <dependency>
 <groupId>javax.inject</groupId>
