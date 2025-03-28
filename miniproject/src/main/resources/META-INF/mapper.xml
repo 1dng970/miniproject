@@ -3,10 +3,13 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="home_mapper">
 
-<select id ="mdchoice_all" resultType="mdchoice_DTO" >
-    SELECT midx, mdtitle, mdtitle_texts, mdimage, mdlink_adr
-    FROM mdchoice
-    ORDER BY midx
+<select id ="mdchoice_all" resultType="mdchoice_DTO">
+   select * from mdchoice
 </select>
+
+<select id ="weekinfo_all" resultType="weekinfo_DTO">
+    select * from weekinfo  
+</select>
+
 
 </mapper>
