@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>  
     <%@taglib prefix="cr" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
-<<style>
+<html lang="ko">
+<style>
 #mdlist {
   display: flex;
   gap: 20px;
@@ -33,7 +34,6 @@
   margin-top: 10px;
 }
 </style>
-<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,24 +65,23 @@
   <!--추천 분양 정보-->
 <section>
   <div class="recommend">
-      <p>추천분양정보<br><em>실시간 추천 분양정보를 한곳에!</em></p>
-      <div class="md_estates">
-        <ul id="mdlist">
-          <cr:forEach var="md" items="${mdall}">
-            <li class="mditem">
-              <div class="mdimage">
-              <a href=S{md.mdlink_adr} target="_blank"></a>
-                <img src="./md_room/${md.mdimage}" alt="${md.mdtitle}">
-              </a>
-              </div>
+    <p>추천분양정보<br><em>실시간 추천 분양정보를 한곳에!</em></p>
+    <div class="md_estates">
+      <ul id="mdlist">
+        <cr:forEach var="md" items="${mdall}">
+          <li class="mditem">
+            <a href="${md.mdlink_adr}">
+              <img src="./md_room/${md.mdimage}" width="100%" height="200" alt="${md.mdtitle}">             
               <span class="mdtitle">${md.mdtitle}</span>
               <div class="mddescription">${md.mdtitle_texts}</div>
-            </li>
-          </cr:forEach>
-        </ul>
-      </div>
+            </a>
+          </li>
+        </cr:forEach>
+      </ul>
+    </div>
   </div>
 </section>
+
  <!--추천 분양 정보 끝-->
  </main>
  <!-- 카피라이터 -->

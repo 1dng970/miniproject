@@ -21,8 +21,8 @@ public class home_controller {
 	   @GetMapping("/home/index.do")
 	   public String mdchoice(Model m){
 		   List<mdchoice_DTO> mdall = this.dao.mdchoice();
+		   System.out.println(mdall);
 		   m.addAttribute("mdall",mdall);	
-		   
 	      return null;
 	   }
 	}

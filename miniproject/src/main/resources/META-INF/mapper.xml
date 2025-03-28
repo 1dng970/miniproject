@@ -4,7 +4,9 @@
 <mapper namespace="home_mapper">
 
 <select id ="mdchoice_all" resultType="mdchoice_DTO" >
-select * from mdchoice order by midx 
+    SELECT midx, mdtitle, mdtitle_texts, mdimage, mdlink_adr
+    FROM mdchoice
+    ORDER BY midx
 </select>
 
 </mapper>
