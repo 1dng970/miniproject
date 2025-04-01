@@ -8,7 +8,7 @@
 <build>
 <plugins>
 <plugin>
-<groupId>ora.apache.maver.plugins</groupId>
+<groupId>ora.apache.maven.plugins</groupId>
 <artifactId>maven-war-plugin</artifactId>
 <version>3.3.2</version>
 </plugin>
